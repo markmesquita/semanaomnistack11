@@ -9,7 +9,6 @@ import logoImg from '../../assets/logo.svg'
 import './styles.css'
 
 export default function NewIncident() {
-  const [incident, setIncident] = useState({})
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [value, setValue] = useState('')

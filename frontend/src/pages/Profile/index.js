@@ -10,17 +10,20 @@ import './styles.css'
 
 export default function Profile() {
   const [incidents, setIncidents] = useState([])
-  const [page, setPage] = useState(1)
 
   const ongName = localStorage.getItem('ongName')
   const ongId = localStorage.getItem('ongId')
 
   const history = useHistory()
 
-  useEffect(() => {
+  const verifyOngAuthenticate = () => {
     if (!ongName && !ongId) {
       history.push('/')
     }
+  }
+
+  useEffect(() => {
+    verifyOngAuthenticate()
   }, [])
 
   useEffect(() => {
